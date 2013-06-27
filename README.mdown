@@ -1,0 +1,5 @@
+# A Video Store Application
+
+The application depends on the ffmpeg library. This should be available through Homebrew on OSX and through apt-get in Linux.
+
+
