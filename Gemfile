@@ -6,7 +6,8 @@ gem 'rails', '3.2.13'
 gem 'sqlite3' # Because this isn't production code...
 gem 'rb-readline' # just in case readline isn't installed.
 gem "paperclip", "~> 3.4.2" # file handling
-gem "paperclip-ffmpeg", "~> 0.11.0" # video processing
+gem 'bcrypt-ruby' # for has_secure_password
+gem "draper", "~> 1.2.1"
 
 
 # Gems used only for assets and not required
@@ -34,7 +35,6 @@ end
 
 group :test do
   gem 'factory_girl_rails'
-  gem 'simplecov', require: false
 end
 
 # To use ActiveModel has_secure_password

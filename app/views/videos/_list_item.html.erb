@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="span2">
+    <%= video_thumbnail(list_item) %>
+  </div>
+  <div class="span8">
+    <h3><%= video_link(list_item) %></h3>
+    <p><%= list_item.published_date %></p>
+  </div>
+  <div class="span2">
+    <%= video_link(list_item) %>
+    <%= video_edit_link(list_item) %>
+  </div>
+</div>
