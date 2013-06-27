@@ -8,7 +8,7 @@ module VideoHelper
         new_purchase_video_url(video)
       end
     else
-      new_session_url
+      video_url(video)
     end
   end
 
