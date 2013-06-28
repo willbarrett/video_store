@@ -1,0 +1,7 @@
+<h1><%= @video.name %></h1>
+
+<video width="640" height="480" controls>
+  <source src="<%= @video.video.url %>" type="video/mp4">
+  <object data="<%= @video.video.url %>" width="640" height="480">
+  </object>
+</video>
