@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :videos, through: :purchases
 
   def owns?(video)
-    videos.include?(video)
+    return true if self.admin?
+    return videos.include?(video)
   end
 end

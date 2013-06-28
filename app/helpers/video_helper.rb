@@ -2,7 +2,7 @@ module VideoHelper
 
   def video_buy_or_watch_url(video)
     if current_user.present?
-      if current_user.admin? or current_user.owns?(video)
+      if current_user.owns?(video)
         video_url(video)
       else
         new_video_purchase_url(video)
@@ -21,13 +21,13 @@ module VideoHelper
   end
 
   def video_edit_link(video)
-    if current_user.admin?
+    if current_user.present? and current_user.admin?
       link_to 'Edit', edit_admin_video_url(video), class: 'btn btn-warning'
     end
   end
 
   def video_button(video)
-    if current_user.admin? or current_user.owns?(video)
+    if current_user.present? and  current_user.owns?(video)
       thename = "Watch"
       theclass = "btn btn-success"
     else
