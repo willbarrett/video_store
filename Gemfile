@@ -8,7 +8,8 @@ gem 'rb-readline' # just in case readline isn't installed.
 gem "paperclip", "~> 3.4.2" # file handling
 gem 'bcrypt-ruby' # for has_secure_password
 gem "draper", "~> 1.2.1"
-gem "money-rails" # for prices
+gem "money-rails" # for prices and money formatting
+gem "stripe" # for payment processing
 
 # Gems used only for assets and not required
 # in production environments by default.
