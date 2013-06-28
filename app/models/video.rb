@@ -12,6 +12,8 @@ class Video < ActiveRecord::Base
 
   has_many :purchases
 
+  default_scope order('created_at DESC')
+
   def to_param
     slug
   end
