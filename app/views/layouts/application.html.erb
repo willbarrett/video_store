@@ -17,7 +17,7 @@
           <% if current_user %>
             <% if current_user.admin? %>
               <li>
-                <%= link_to admin_root_url %>
+                <%= link_to 'Admin Section', admin_root_url %>
               </li>
             <% end %>
             <li>
@@ -33,6 +33,15 @@
           <% end %>
         </ul>
       </div>
+  </div>
+
+  <div id="alert-block">
+    <% flash.each do |type, message| %>
+      <div class="alert" data-alert="alert">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <%= message %>
+      </div>
+    <% end %>
   </div>
 
   <div class="container">

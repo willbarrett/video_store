@@ -1,0 +1,34 @@
+<%= form_for @video, url: [:admin, @video] do |f| %>
+  <% if @video.errors.any? %>
+    <div class="alert alert-error">
+      <h4>Whoops! There were problems with this video</h4>
+      <ul>
+        <% @video.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :slug %>
+  <%= f.text_field :slug %>
+
+  <%= f.label :publication_date %>
+  <%= f.date_select :publication_date %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <%= f.label :video %>
+  <%= f.file_field :video %>
+
+  <%= f.label :preview, 'Preview Image' %>
+  <%= f.file_field :preview %>
+
+  <p>
+    <%= f.submit class: 'btn btn-primary' %>
+  </p>
+<% end %>
