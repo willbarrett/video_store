@@ -18,7 +18,7 @@
   <tbody>
   <% @videos.each do |video| %>
     <tr>
-      <td><%= video.name %></td>
+      <td><%= video_link(video) %></td>
       <td><%= video.publication_date %></td>
       <td><%= video.price.format %></td>
       <td><%= video.purchases.count %></td>

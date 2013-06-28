@@ -1,7 +1,7 @@
 class Video < ActiveRecord::Base
   attr_accessible :name, :slug, :video, :preview, :publication_date, :price, :price_cents
   has_attached_file :video
-  has_attached_file :preview, formats: {
+  has_attached_file :preview, styles: {
     thumb: '100x100#',
     full: '640x480#'
   }

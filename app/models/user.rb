@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :videos, through: :purchases
 
-  def owns(video)
+  def owns?(video)
     videos.include?(video)
   end
 end
