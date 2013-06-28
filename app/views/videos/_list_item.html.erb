@@ -4,7 +4,7 @@
   </div>
   <div class="span8">
     <h3><%= video_link(list_item) %></h3>
-    <p><%= list_item.publication_date %></p>
+    <p>Published: <%= list_item.publication_date %><br /> Price: <%= list_item.price.format %></p>
   </div>
   <div class="span2">
     <%= video_button(list_item) %>
