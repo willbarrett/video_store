@@ -14,5 +14,14 @@ describe Purchase do
         FactoryGirl.create(:purchase)
       }.should change(Purchase, :count).by(1)
     end
+
+  end
+
+  describe "hooks" do
+    it "should send email" do
+      ActionMailer::Base.deliveries = []
+      FactoryGirl.create(:purchase)
+      ActionMailer::Base.deliveries.should_not be_empty
+    end
   end
 end
