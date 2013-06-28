@@ -22,7 +22,7 @@
       <td><%= video.publication_date %></td>
       <td><%= video.price.format %></td>
       <td><%= video.purchases.count %></td>
-      <td><%= Money.new(video.purchases.sum(:amount_cents)/100.0).format %></td>
+      <td><%= Money.new(video.purchases.sum(:amount_cents)).format %></td>
       <td>
         <%= link_to 'Edit', edit_admin_video_url(video) %> | 
         <%= link_to 'Delete', admin_video_url(video), method: :delete, confirm: 'Are you sure?' %>
