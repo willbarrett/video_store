@@ -13,7 +13,7 @@ class VideosController < ApplicationController
   protected 
 
   def find_video
-    @video = Video.find_by_slug!(params[:id])
+    @video = VideoDecorator.find_by_slug!(params[:id])
   end
 
   def ensure_ownership

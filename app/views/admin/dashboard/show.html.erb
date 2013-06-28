@@ -16,13 +16,15 @@
     </tr>
   </thead>
   <tbody>
-  <% @videos.each do |video| %>
+    <% @videos.each do |video| 
+      vid = VideoDecorator.decorate(video)
+  %>
     <tr>
-      <td><%= video_link(video) %></td>
-      <td><%= video.publication_date %></td>
-      <td><%= video.price.format %></td>
-      <td><%= video.purchases.count %></td>
-      <td><%= Money.new(video.purchases.sum(:amount_cents)).format %></td>
+      <td><%= vid.link %></td>
+      <td><%= vid.publication %></td>
+      <td><%= vid.price %></td>
+      <td><%= vid.purchases.count %></td>
+      <td><%= vid.revenue %></td>
       <td>
         <%= link_to 'Edit', edit_admin_video_url(video) %> | 
         <%= link_to 'Delete', admin_video_url(video), method: :delete, confirm: 'Are you sure?' %>

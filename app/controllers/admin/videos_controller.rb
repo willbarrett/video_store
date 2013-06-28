@@ -1,6 +1,6 @@
 class Admin::VideosController < Admin::BaseController
 
-  before_filter :find_video, only: [:edit, :update]
+  before_filter :find_video, only: [:edit, :update, :destroy]
 
   def new
     @video = Video.new
@@ -24,6 +24,11 @@ class Admin::VideosController < Admin::BaseController
     else
       render action: 'edit'
     end
+  end
+
+  def destroy
+    @video.destroy
+    redirect_to admin_root_url, notice: 'Video Deleted'
   end
 
   protected

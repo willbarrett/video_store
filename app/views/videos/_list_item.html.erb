@@ -1,13 +1,15 @@
+<% video = VideoDecorator.decorate(list_item) %>
+
 <div class="row">
   <div class="span2">
-    <%= video_thumbnail(list_item) %>
+    <%= video.thumbnail %>
   </div>
   <div class="span8">
-    <h3><%= video_link(list_item) %></h3>
-    <p>Published: <%= list_item.publication_date %><br /> Price: <%= list_item.price.format %></p>
+    <h3><%= video.link %></h3>
+    <p>Published: <%= video.publication %><br /> Price: <%= video.price.format %></p>
   </div>
   <div class="span2">
-    <%= video_button(list_item) %>
-    <%= video_edit_link(list_item) %>
+    <%= video.link_button %>
+    <%= video.edit_button %>
   </div>
 </div>
